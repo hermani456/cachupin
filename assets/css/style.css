@@ -1,0 +1,12 @@
+body{
+   background: rgb(48,156,122);
+   background: linear-gradient(90deg, rgba(48,156,122,1) 0%, rgba(166,97,27,0.9640056706276261) 50%, rgba(173,20,80,1) 100%);
+   font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, div{
+   display: flex;
+   justify-content: space-evenly;
+}
+div{
+   font-size: 150px;
+}
