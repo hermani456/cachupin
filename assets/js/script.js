@@ -2,6 +2,7 @@
 var victoriasJugador = 0
 var victoriasMaquina = 0
 var empates = 0
+
 // pregunta si desea jugar al cachipun
 var confirmacion = confirm('Quieres jugar al cachipun?')
 if (confirmacion) {
@@ -9,12 +10,28 @@ if (confirmacion) {
 } else {
    alert('Que lastima')
 }
+
 // inicio del juego
 function juego() {
    var cantidadJuegos = prompt('Cuantos juegos deseas jugar?')
    for (i = 0; i < cantidadJuegos; i++) {
       // eleccion del jugador
-      var opcionUsuario = prompt('Elige entre piedra✊, papel✋ o tijeras✌️')
+      var opcionUsuario = ''
+      do {
+         const opcion = prompt('Elige entre piedra✊, papel✋ o tijeras✌️')
+         if(opcion === 'tijeras'){
+            opcionUsuario = 'tijeras'
+         }
+         if(opcion === 'piedra'){
+            opcionUsuario = 'piedra'
+         }
+         if(opcion === 'papel'){
+            opcionUsuario = 'papel'
+         } 
+         if(opcionUsuario === ''){
+            alert('intente nuevamente')
+         }
+      } while (opcionUsuario === '')
       // eleccion random de la maquina
       const opciones = ['tijeras', 'papel', 'piedra'];
       const random = Math.floor(Math.random() * opciones.length);
@@ -24,6 +41,7 @@ function juego() {
    }
    repetirJuego()
 }
+
 // funcion que pregunta y repite el juego o lo termina segun respuesta
 function repetirJuego() {
    var respuesta = prompt('Quieres jugar denuevo?')
@@ -33,6 +51,7 @@ function repetirJuego() {
       alert('Gracias por jugar, no vuelvas')
    }
 }
+
 // funcion con las reglas del cachipun, tambien acumula las victorias y empates
 function cachipun(opcionUsuario, opcionMaquina) {
    if (
@@ -55,6 +74,7 @@ function cachipun(opcionUsuario, opcionMaquina) {
    }
    return resultado;
 }
+
 // decide quien gano la partida final
 var ganador = function () {
    if (victoriasJugador > victoriasMaquina) {
@@ -65,8 +85,8 @@ var ganador = function () {
       return 'Empate'
    }
 }
+
 // muestra el resultado en pantalla
-console.log(victoriasJugador, victoriasMaquina)
 document.write(`<h1>Man Vs Machine</h1>`)
 document.write(`<h2>Final Score</h2>`)
 document.write(`<div><div>👨</div><div>🤖</div></div>`)
