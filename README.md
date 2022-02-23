@@ -1,2 +1,2 @@
 # cachipun
-juga en: https://diegocampuzano.ml/cachupin/
+juega en: https://diegocampuzano.ml/cachupin/
