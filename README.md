@@ -1,2 +1,2 @@
 # cachipun
-juga en: https://malatuca.ga/cachupin/
+juga en: https://diegocampuzano.ml/cachupin/
